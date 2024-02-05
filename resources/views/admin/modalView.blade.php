@@ -7,7 +7,7 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">detail post</h1>
                 </div>
                 <div class="modal-body">
-                    <img src={{ asset('ceweku/' . $item->picture) }} alt="avatar" class="img-pre w-100">
+                    <img src={{ asset('photo/' . $item->picture) }} alt="avatar" class="img-pre w-100">
                     <div class="form-floating mt-3">
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px"
                             name="caption" disabled>{{ $item->caption }}</textarea>

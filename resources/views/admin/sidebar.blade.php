@@ -4,7 +4,7 @@
         <svg class="bi pe-none" width="40" height="32">
             <use xlink:href="#bootstrap"></use>
         </svg>
-        <span class="fs-4">Gallery i</span>
+        <span class="fs-4">Gallery ⌞₊⊹⌝</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">

@@ -10,7 +10,7 @@
                     <form action={{ route('gallery.update', $item->id) }} method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('put')
-                        <img src={{ asset('ceweku/' . $item->picture) }} alt="avatar" class="img-pre w-50">
+                        <img src={{ asset('photo/' . $item->picture) }} alt="avatar" class="img-pre w-50">
                         <div class="my-3">
                             <label for="formFile" class="form-label">input picture file</label>
                             <input class="form-control" type="file" name="picture" id="formFile"

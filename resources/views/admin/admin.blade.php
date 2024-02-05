@@ -10,10 +10,10 @@
             </div>
             <div class="col-md-9">
                 <div class="d-flex align-items-center justify-content-between p-4">
-                    <h1>Gallery</h1>
+                    <h1>Gallery  ⌞₊⊹⌝</h1>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        add pictures
+                        𝖺𝖽𝖽 𝗉𝗂𝖼𝗍𝗎𝗋𝖾
                     </button>
                     @include('admin.modalForm')
                 </div>
@@ -21,7 +21,7 @@
                     @foreach ($gallery as $item)
                         <div class="col">
                             <div class="card shadow-sm" style="height: 370px">
-                                <img src={{ asset('ceweku/' . $item->picture) }} alt="girl" style="height: 230px">
+                                <img src={{ asset('photo/' . $item->picture) }} alt="girl" style="height: 230px">
                                 <div class="card-body d-flex flex-column justify-content-between">
                                     <p class="card-text">
                                         {{ Str::limit($item->caption, 50) }}
@@ -30,11 +30,11 @@
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-md btn-outline-primary"
                                                 data-bs-toggle="modal" data-bs-target="#view{{ $item->id }}">
-                                                View
+                                                <x-bi-eye />
                                             </button>
                                             <button type="button" class="btn btn-md btn-outline-secondary"
                                                 data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
-                                                Edit
+                                                <x-bi-pencil-square />
                                             </button>
                                             <form action={{ route('gallery.destroy', $item->id) }} method="POST"
                                                 class="m-0 btn-group">
@@ -42,7 +42,7 @@
                                                 @csrf
                                                 <button class="btn btn-md btn-outline-danger" onclick="deleteConfirm(event)"
                                                     type="submit">
-                                                    Hapus
+                                                    <x-bi-trash3 />
                                                 </button>
                                             </form>
                                         </div>

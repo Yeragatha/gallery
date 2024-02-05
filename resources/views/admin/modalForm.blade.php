@@ -8,7 +8,7 @@
                 <div class="modal-body">
                     <form action={{ route('gallery.store') }} method="POST" enctype="multipart/form-data">
                         @csrf
-                        <img src={{ asset('ceweku/default.jpg') }} alt="avatar" class="img-pre w-50">
+                        <img src={{ asset('photo/default.jpg') }} alt="avatar" class="img-pre w-50">
                         <div class="my-3">
                             <label for="formFile" class="form-label">input picture file</label>
                             <input class="form-control" type="file" name="picture" id="formFile"

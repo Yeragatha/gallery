@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreGalleryRequest;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
-
 
 class GalleryController extends Controller
 {
@@ -37,7 +34,7 @@ class GalleryController extends Controller
         if ($request->file('picture')) {
             $oriName = $request->file('picture')->getClientOriginalName();
             $validated['picture'] = md5(time()) . preg_replace('/\s+/', '', $oriName);
-            $request->picture->move(public_path('ceweku'), $validated['picture']);
+            $request->picture->move(public_path('photo'), $validated['picture']);
         } else $validated['picture'] = 'default.jpg';
 
 
@@ -73,11 +70,11 @@ class GalleryController extends Controller
 
         if ($request->file('picture')) {
             if ($gallery->getOriginal()['picture'] !== 'default.jpg') {
-                unlink("ceweku/" . $gallery->getOriginal()['picture']);
+                unlink("photo/" . $gallery->getOriginal()['picture']);
             }
             $oriName = $request->file('picture')->getClientOriginalName();
             $validated['picture'] = md5(time()) . preg_replace('/\s+/', '', $oriName);
-            $request->picture->move(public_path('ceweku'), $validated['picture']);
+            $request->picture->move(public_path('photo'), $validated['picture']);
         }
 
         Gallery::where('id', $gallery->id)->update($validated);
@@ -92,7 +89,7 @@ class GalleryController extends Controller
     public function destroy(Gallery $gallery)
     {
         if ($gallery->getOriginal()['picture'] !== 'default.jpg') {
-            unlink("ceweku/" . $gallery->getOriginal()['picture']);
+            unlink("photo/" . $gallery->getOriginal()['picture']);
         }
 
         Gallery::destroy($gallery->id);
